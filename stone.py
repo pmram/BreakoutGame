@@ -1,6 +1,7 @@
 import random
 from turtle import Turtle
 
+# Sets up the color array for the stones to be picked
 AVAILABLE_COLORS = [
     (255, 89, 94),
     (255, 202, 58),
@@ -25,6 +26,9 @@ class Stone(Turtle):
         self.showturtle()
         self.status = 1
 
-    def delete_stone(self):
+    def delete_stone(self) -> None:
+        """
+        Hides the stone from game and sets its status to '0'
+        """
         self.status = 0
         self.hideturtle()
