@@ -15,7 +15,7 @@ class Ball(Turtle):
         self.y_move = INCREMENT
         self.move_speed = 0.001
 
-    def move(self):
+    def move(self) -> None:
         """
         Moves the ball in a defined INCREMENT
         """
@@ -23,19 +23,19 @@ class Ball(Turtle):
         new_y = self.ycor() + self.y_move
         self.goto(new_x, new_y)
 
-    def bounce_x(self):
+    def bounce_x(self) -> None:
         """
         Alternates the sign of 'x' axis movement
         """
         self.x_move *= -1
 
-    def bounce_y(self):
+    def bounce_y(self) -> None:
         """
         Alternates the sign of 'y' axis movement
         """
         self.y_move *= -1
 
-    def reset_position(self):
+    def reset_position(self) -> None:
         """
         Resets the ball to the center of the board
         """
