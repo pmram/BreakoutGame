@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-INCREMENT = 30
+INCREMENT = 30  # Sets up the increment in distance for each iteration
 
 
 class Paddle(Turtle):
@@ -16,9 +16,15 @@ class Paddle(Turtle):
         self.limit_right = window_limit_right
 
     def move_left(self):
+        """
+        Moves paddle an INCREMENT to left
+        """
         if self.xcor() > self.limit_left + 80:
             self.goto(self.xcor() - INCREMENT, self.ycor())
 
     def move_right(self):
+        """
+        Moves paddle an INCREMENT to right
+        """
         if self.xcor() < self.limit_right - 80:
             self.goto(self.xcor() + INCREMENT, self.ycor())
