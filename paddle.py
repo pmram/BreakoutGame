@@ -15,14 +15,14 @@ class Paddle(Turtle):
         self.limit_left = window_limit_left
         self.limit_right = window_limit_right
 
-    def move_left(self):
+    def move_left(self) -> None:
         """
         Moves paddle an INCREMENT to left
         """
         if self.xcor() > self.limit_left + 80:
             self.goto(self.xcor() - INCREMENT, self.ycor())
 
-    def move_right(self):
+    def move_right(self) -> None:
         """
         Moves paddle an INCREMENT to right
         """
