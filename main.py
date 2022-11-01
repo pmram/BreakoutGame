@@ -20,6 +20,7 @@ screen = Screen()
 screen.colormode(255)
 screen.tracer(0)
 screen.bgcolor('black')
+screen.title('Breakout Game')
 screen.listen()
 
 # Stones definition
