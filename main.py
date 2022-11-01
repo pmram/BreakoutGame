@@ -5,30 +5,25 @@ from paddle import Paddle
 from scoreboard import Scoreboard
 from stone import Stone
 
-LIMIT_LEFT = -250
-LIMIT_RIGHT = 250
-AVAILABLE_COLORS = [
-    (255, 89, 94),
-    (255, 202, 58),
-    (138, 201, 38),
-    (25, 130, 196),
-    (106, 76, 147)
-]
-ROWS = 5
-COLUMNS = 7
-INIT_X = -200
-INIT_Y = 200
-SPACING_X = 65
-SPACING_Y = 25
+LIMIT_LEFT = -250  # Screen limit left
+LIMIT_RIGHT = 250  # Screen limit right
+ROWS = 5  # Number of stone rows
+COLUMNS = 7  # Number of stone columns
+INIT_X = -200  # Initial 'x' position of the first stone
+INIT_Y = 200  # Initial 'y' position of the first stone
+SPACING_X = 65  # Spacing 'x' between the center of the stones
+SPACING_Y = 25  # Spacing 'y' between the center of the stones
 
+# Screen definition
 setup(500, 500)
 screen = Screen()
 screen.colormode(255)
 screen.tracer(0)
 screen.bgcolor('black')
 screen.listen()
-stones = []
 
+# Stones definition
+stones = []
 for row in range(ROWS):
     for col in range(COLUMNS):
         pos_x = INIT_X + col * SPACING_X
@@ -73,7 +68,7 @@ while game_is_on:
     for active_stone in active_stones:
         if active_stone.ycor() + 25 > ball.ycor() > active_stone.ycor() - 25 and \
                 active_stone.xcor() + 30 > ball.xcor() > active_stone.xcor() - 30:
-            # Needs to bounce
+            # Needs to bounce and point is added
             ball.bounce_y()
             ball.increase_speed()
             active_stone.delete_stone()
